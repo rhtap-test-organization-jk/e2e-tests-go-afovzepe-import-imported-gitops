@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: e2e-tests-go-afovzepe-import-imported
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-tssc/task-runner:1.7
-        name: container-image  
+        - image: quay.io/rhtap_qe/e2e-tests-go-afovzepe-import-imported:1045472ad93ebbe9caf9c1faec0d18c20d959d56@sha256:1bb4054327f4ee6c696937a02f2acd3264e32c9a421925a56c339503d589d10f
+          name: container-image
